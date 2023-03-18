@@ -1,0 +1,25 @@
+c++ is a semi object oriented, case sensitive, platform dependent, before the name c++, it was called c with class.
+
+c++ is a semi object oriented programming, platform dependent, 
+
+c++ program -----> compiler----------> .exe file
+	(compilation/build)
+
+imporatnat data types:
+1 Built in data types: int (-1,0,2,4,112..) Float (1.12, 1.3....) Double (1.234545 double is a float with more presicion)
+Char ('a' 'n' 'k' ...) boolean (true/false)
+2. user defined data types: struct, union, enum
+3. derived data types: Array, functions, pointers
+
+int sum = 10 means: sum is an integer variable/integer container that holds the value of in in memory.
+ 
+BASIC INPUT/OUTPUT IN C++
+c++ comes with libraries which helps us in performing input/output. in c++, sequence of bytes corrosponding to 
+input and output are commonly known as streams.
+INPUT STREAM: Direction of flow of bytes takes from input device for example from input device (keyboard) to the main memory
+OUTPUT STREAM: Direction of flow of bytes takes from main memory to the output device such as display.
+
+Earthametic operators, comparison operators, logical operators, Scope resolution operator (::) 
+
+a++: first print the value of a and increment
+++a: first increment and then print
