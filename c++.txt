@@ -23,3 +23,13 @@ Earthametic operators, comparison operators, logical operators, Scope resolution
 
 a++: first print the value of a and increment
 ++a: first increment and then print
+
+Variable: variable is the name of the momory location where we store value.
+const keyword is used to declare a constant, constant can be of any datatype, 
+constants are also called literals, we can change the value of constant forcefully using pointer.
+
+derived data types: Array, string, function, pointer
+Array: 1 D array and 2 D array.
+
+Function is a block of code that runs only when it is called. there are two types of functions: user defined and predefined.
+
