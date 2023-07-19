@@ -26,7 +26,7 @@ int main (){
    cin>>password1;
    if (username==username1 && password==password1){
       system("cls");
-      while(1){
+      while(true){
          cout<<"Press 1 to enter data" <<endl;
          cout<<"Press 2 to show data" <<endl;
          cout<<"Press 3 to search data" <<endl;

@@ -59,7 +59,7 @@ else{cout<<"you do not have sufficient funds in your account";}
 }
 }
 int main (){
-  showMenu();
+   showMenu();
   bankApp b;
   b.open_account();
   b.deposit_money();
