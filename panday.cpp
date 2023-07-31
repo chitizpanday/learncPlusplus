@@ -189,8 +189,8 @@
 
 
 // int main (){
-//    cout<< sizeof emp1 <<endl;
-//    cout<< sizeof emp2;
+//    cout<< sizeof (emp1) <<endl;
+//    cout<< sizeof (emp2);
 //    return 0;
 // }
 
@@ -218,8 +218,7 @@
 //    return 0;
 // }
 //=================================================================
-
- # include <iostream>
+//  # include <iostream>
 // using namespace std;
 
 // int sum(int a, int b);// Function prototype
@@ -234,6 +233,7 @@
 //  int c=(a+b);
 //    return c;
 // }
+//==========
 // int sum(int a, int b){
 // int c = (a+b);
 // return c;
@@ -242,9 +242,9 @@
 //    std::cout<<sum(7,6);
 // }
 //========================================================
- # include <iostream>
+//  # include <iostream>
 // using namespace std; 
-# include <string.h>
+// # include <string.h>
 // int main (){
 // char collection []= "chitiz";
 // char collection1 []= "panday";
@@ -252,8 +252,7 @@
 // cout<<r;
 // cout<<strupr(collection) <<endl;
 // cout<<strcat(collection, collection1)<<endl;
-// cout<<strrev(collection);
-
+// cout<<strrev(collection)<<endl;
 //    return 0;
 // }
 //===============================
@@ -269,9 +268,10 @@
 //==================================================FILE HANDELING============
 // The header file for file handeling is # include <fstream>
 //to create and write we use ofstream, to read from the file we use ifstream.
-// # include <iostream>
-// # include <fstream>
-// using namespace std; 
+# include <iostream>
+# include <fstream>
+#include <conio.h>
+using namespace std; 
 
 // int main (){
 //    ofstream newfile ("c:\\Users\\pandc\\OneDrive\\Desktop\\cpp.txt");
@@ -280,6 +280,16 @@
 //    newfile.close();
 //    return 0;
 // }
+int main(){
+   char names [100];
+   std::cout<<"what is your name";
+   cin.getline(names, 100 );
+   ofstream object;
+   object.open("c:\\users\\pandc\\onedrive\\Desktop\\filehandeling.txt");
+   object<<names;
+   object.close();
+   getch();
+}
 //==================================================================Read from the file with ifstream============================
 // # include <iostream>
 // # include <fstream>
@@ -950,6 +960,16 @@
    
 //    return 0;
 // }
+//==========
+// int main(){
+//    std:: string names = "chitizpanday";
+//    for (int i = 0; i <names.length(); i++)
+//    {
+//       std::cout<<names[i] <<std::endl;
+//    }
+   
+//    return 0;
+// }
 //====================================================NESTED FOR LOOP======================================
 // int main(){
 //   int rows;
@@ -1450,4 +1470,3 @@
 // 	object[i]. showData();}
 // 	return 0;
 // }
-wat up folks??
