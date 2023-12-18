@@ -1,4 +1,5 @@
 #include <iostream>
+//#include <cassert>
 // double squareArea(int length){
 // return length*length;
 // }
@@ -280,16 +281,16 @@ using namespace std;
 //    newfile.close();
 //    return 0;
 // }
-int main(){
-   char names [100];
-   std::cout<<"what is your name";
-   cin.getline(names, 100 );
-   ofstream object;
-   object.open("c:\\users\\pandc\\onedrive\\Desktop\\filehandeling.txt");
-   object<<names;
-   object.close();
-   getch();
-}
+// int main(){
+//    char names [100];
+//    std::cout<<"what is your name";
+//    cin.getline(names, 100 );
+//    ofstream object;
+//    object.open("c:\\users\\pandc\\onedrive\\Desktop\\filehandeling.txt");
+//    object<<names;
+//    object.close();
+//    getch();
+// }
 //==================================================================Read from the file with ifstream============================
 // # include <iostream>
 // # include <fstream>
@@ -1470,3 +1471,68 @@ int main(){
 // 	object[i]. showData();}
 // 	return 0;
 // }
+// int main(){
+// std::cout<<"I am fine";
+//    return 0;
+// }
+//===============================this====================
+// in c++, the keyword "this" holds the address of an object, this is also used to access the member variable of a class when the member variable and the local variable of a function have 
+// the same name.
+
+// class funrun{
+//    int a=10;
+//    public:
+//    void firstGraders(int a){
+//       this->a = a;
+//       std::cout<<this -> a;
+
+//       std::cout<<"the address of the object is: "<<this;
+//    }
+// };
+
+// int main(){
+//    funrun object;
+//    object.firstGraders(5);
+
+//    return 0;
+// }
+//============
+
+// class employeeRecord {
+//    std::string name;
+//    float salary;
+//    public:
+//    void getdata();
+//    void showdata();
+// };
+
+// void employeeRecord::getdata(){
+//    std::cout<<"employee name: ";
+//    std::cin.ignore();
+//    std::getline(std::cin, name);
+//    std::cout<<"employee salary: ";
+//    std::cin>>salary;
+// }
+// void employeeRecord::showdata(){
+//    std::cout<<name<<std::endl;
+//    std::cout<<salary<<std::endl;
+// }
+// int main(){
+//    employeeRecord object [3];
+//    for(int i=0; i<3; i++){
+//       std::cout<<"please input data for employee "<<i+1 <<std::endl;
+//       object[i].getdata();
+//    }
+//    for(int i=0; i<3; i++){
+//       std::cout<<"input data for employee "<<i+1 <<std::endl;
+//       object[i].showdata();
+//    }
+//       return 0;
+//    }
+int isLesserOrGreater(int a){
+   return a>=0;
+}
+int main(){
+  std::cout<< isLesserOrGreater(5);
+   return 0;
+}
