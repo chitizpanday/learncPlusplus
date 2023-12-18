@@ -1530,9 +1530,15 @@ using namespace std;
 //       return 0;
 //    }
 int isLesserOrGreater(int a){
-   return a>=0;
+   bool isgreaterThan;
+   isgreaterThan = a>0;
+    if(isgreaterThan){
+      std::cout<<"I am lucky \n";
+   }
+   return isgreaterThan;
+  
 }
 int main(){
-  std::cout<< isLesserOrGreater(5);
+  std::cout<< isLesserOrGreater(-1);
    return 0;
 }
