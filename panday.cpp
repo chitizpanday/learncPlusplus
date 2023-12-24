@@ -1539,6 +1539,6 @@ int isLesserOrGreater(int a){
   
 }
 int main(){
-  std::cout<< isLesserOrGreater(-1);
+  isLesserOrGreater(1);
    return 0;
 }
