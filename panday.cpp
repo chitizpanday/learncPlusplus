@@ -1,5 +1,6 @@
 #include <iostream>
 //#include <cassert>
+
 // double squareArea(int length){
 // return length*length;
 // }
@@ -8,6 +9,7 @@
 // std::cout<<squareArea(3);
 //    return 0;
 // }
+
 //==============
 // int circleArea(int r){
 //    float pi = 3.14;
@@ -18,6 +20,7 @@
 //    std::cout<<float (circleArea(5));
 //    return 0;
 // }
+//# define pi = 3.14;
 //==================================================================
 // #include <iostream>
 // int glo=9;
@@ -65,7 +68,7 @@
 // }
 //==================================break and continue==========================
 // # include <iostream>
-// using namespace std; 
+//  using namespace std; 
 
 // int main (){
 //    for (int i=0; i<=11; i++){
@@ -76,20 +79,20 @@
 //    }
 //    return 0;
 // }
+
 //========================
 // int demo(){
 //    int i;
 //    for( i=0; i<10; i++){
-//       //if(i==5){continue;}
+//       if(i==5){continue;}
 //       std::cout<<i;
 //    }
-//    return i;
-
+//    //return i;
 // }
 
 // int main(){
-//   std::cout<< demo();
-//    return 0;
+//   demo();
+//   return 0;
 // }
 
 //=================================Pointer========================
@@ -113,13 +116,14 @@
 
 // int main (){
 //    int a =5;
-//   int* b = &a;
+//   int *b = &a;
+//    cout<<*(&a)<<endl;
 //    cout<< &a <<endl;
 //    cout<< b <<endl;
-//    cout<<*b;
+//    cout<<*b<<endl;
+//    cout<<&b;
 //    return 0;
 // }
-
 //===========================================ARRAYS AND POINTERS===============
 // # include <iostream>
 // using namespace std; 
@@ -187,8 +191,6 @@
 //    float opt;
 // }emp2;
 
-
-
 // int main (){
 //    cout<< sizeof (emp1) <<endl;
 //    cout<< sizeof (emp2);
@@ -245,7 +247,7 @@
 //========================================================
 //  # include <iostream>
 // using namespace std; 
-// # include <string.h>
+//# include <string.h>
 // int main (){
 // char collection []= "chitiz";
 // char collection1 []= "panday";
@@ -265,7 +267,31 @@
 //    }
 //    return 0;
 // }
+//========================
+// #include<string.h>
+// int main(){
+//    char characters [] = "aeiou";
+//    std::string name= "chitiz";
+//    std::string team[]= {"cowboy", "seahawks", "eagles",};
+//       std::cout<< name.length() <<'\n';
+//       std::cout<< strlen(characters)<<std::endl; // to use strlen(), header #include<string.h> is needed. strlen() is used with the char array.
+//       std::cout<<sizeof(team)/sizeof(std::string);
+//       return 0;
+// }
+//==================
+// int charLen(){
+// char name [] = "chabilaal";
+// int count = 0;
+// for(int i = 0; name[i] != '\0'; i++){  // In a C-style string, '\0' denotes the null terminator; it's used to mark the end of the string. 
+// count++;                               // So any functions that process/display strings will stop as soon as they hit it
+// }
+// return count;
+// }
 
+// int main(){
+// std::cout<<charLen();
+//    return 0;
+// }
 //==================================================FILE HANDELING============
 // The header file for file handeling is # include <fstream>
 //to create and write we use ofstream, to read from the file we use ifstream.
@@ -321,12 +347,27 @@ using namespace std;
 //    }
 //    catch(int b)
 //    {
-//       cout<<"can't be divided by"<<b;
+//       cout<<"can't be divided by "<<b;
 //    }
    
 //     c=a/b;
-//    cout<<c;
+//    cout<<c <<'\n';
 //    cout<<"execution successful";
+//    return 0;
+// }
+//===============
+// int main(){
+//    int a=3;
+
+//    try{
+//       if (a==2 || a==3){      //u cannot write int a here??
+//          throw a;
+//       }
+//       else{std::cout<<"the CPR is connected to the ethernet";}
+//    }
+//    catch(int a){              // u slould and should write int here?
+//       std::cout<<"integer 2 is an unacceptable input";
+//    }
 //    return 0;
 // }
 //==========================================OOPS================================================================
@@ -362,46 +403,33 @@ using namespace std;
 //    return 0;
 // }
 //===============================ANOTHER HIFI CLASS EXAMPLE=========================
-// # include <iostream>
-// using namespace std; 
-// class student{
-// int roll;
-// char name [20];
-// int age;
-// float marks;
-// char gender;
-// public:
-// void getdata(){
-// //cout<<"please provide students data\n";
-// cout<<"roll : ";
-// cin>>roll;
-// cout<<"name : ";
-// cin.ignore();
-// cin.getline(name,20);
-// cout<<"age : ";
-// cin>>age;
-// cout<<"marks : ";
-// cin>>marks;
 
-// }
-// void showdata(){
-//    cout<<"roll : "<<roll <<ends;
-//    cout<<"name : "<<name <<ends;
-//    cout<<"age : "<<age <<ends;
-//    cout<<"marks : "<<marks <<ends;
-
-// }
-// };
-// int main (){
-//    student obj[3];
-//    for(int i=0; i<3; i++){
-//       cout<<"Enter the data for student : "<<i+1 <<endl;
-//       obj[i].getdata();
+// class school{
+//    std::string name;
+//    int score;
+//    public:
+//    void getdata(){
+//       std::cout<<"student's name: ";
+//       std::cin.ignore();
+//       getline(std::cin, name);
+//       std::cout<<"student's score: ";
+//       std::cin>>score;
 //    }
-// cout<<endl<<endl;
-//    for(int i=0; i<3; i++){
-//       cout<<"Result of the data for student : "<<i+1 <<endl;
-//       obj[i].showdata();
+//    void showdata(){
+//       std::cout<<"name: "<< name<<std::endl;
+//       std::cout<<"score: "<<score<<std::endl;
+//    }
+// };
+// int main(){
+//    school object[2];
+//    for(int i=0; i<2; i++){
+//       std::cout<<"Please enter the data for student "<<i+1<<std::endl;
+//       object[i].getdata();
+//    }
+//    for(int i=0; i<2; i++){
+//       std::cout<<"======================";
+//       std::cout<<"data of student"<<i+1<<std::endl;
+//       object[i].showdata();
 //    }
 //    return 0;
 // }
@@ -1476,16 +1504,16 @@ using namespace std;
 //    return 0;
 // }
 //===============================this====================
-// in c++, the keyword "this" holds the address of an object, this is also used to access the member variable of a class when the member variable and the local variable of a function have 
-// the same name.
+//in c++, the keyword "this" holds the address of an object, this is also used to access the member variable of a class when the member variable and the local variable of a function have 
+//the same name.
 
 // class funrun{
 //    int a=10;
 //    public:
 //    void firstGraders(int a){
+//       std::cout<<this -> a<<endl;
 //       this->a = a;
-//       std::cout<<this -> a;
-
+//       std::cout<<this -> a<<endl;
 //       std::cout<<"the address of the object is: "<<this;
 //    }
 // };
@@ -1529,16 +1557,227 @@ using namespace std;
 //    }
 //       return 0;
 //    }
-int isLesserOrGreater(int a){
-   bool isgreaterThan;
-   isgreaterThan = a>0;
-    if(isgreaterThan){
-      std::cout<<"I am lucky \n";
-   }
-   return isgreaterThan;
+// int isLesserOrGreater(int a){
+//    bool isgreaterThan;
+//    isgreaterThan = a>0;
+//     if(isgreaterThan){
+//       std::cout<<"I am lucky \n";
+//    }
+//    return isgreaterThan;
   
-}
-int main(){
-  isLesserOrGreater(1);
-   return 0;
-}
+// }
+// int main(){
+//   isLesserOrGreater(1);
+//    return 0;
+// }
+//==================================================================Random Practice==========================================================================================
+// double shoppingFunction(int purchasePrice, string city){
+//    //int purchasePrice;
+//    int discount;
+//    int finalPrice;
+//    if(purchasePrice >= 1000 && city !="india" && city !="china"){
+//       discount = purchasePrice*0.1;
+//       finalPrice = purchasePrice - discount;
+//       std::cout<< "Your final price after discount is: " <<finalPrice;
+//    }
+//    else(std::cout<<"Your final price is: "<<purchasePrice);
+// }
+// int main(){
+//    shoppingFunction(2000, "china");
+//    return 0;
+// }
+//================================================================
+// int main(){
+//    char character;
+//    std::cout<<"please inter a character";
+//    std::cin>>character;
+//    if(character>='a' && character<='z' || character>='A' && character<='Z'){
+//       std::cout<<character <<" is an alphabet";
+//    }
+//    else if(character>='0' && character<='9'){     // if it is a character, it always comes within '' quotes, does not matter if it is an alphabet or a number
+//       std::cout<<character <<" is a number";
+//    }
+//    else{
+//       std::cout<<"the character is a special character";
+//    }
+//    return 0;
+//}
+//=================SIMILAR AS ABOVE BUT USING TERNARY OPERATOR=========================
+// int main(){
+//    char character;
+//    std::cout<<"please inter a character";
+//    std::cin>>character;
+//    character>='a' && character<='z' ? std::cout<<"it is an alphabet" : std::cout<<"It is not an alphabet";
+//    return 0;
+// }
+//===============================================================Reverse a string============================
+// int main(){
+//    char name []= {'z','i','t','i','h','c'};
+//    int stringLength;
+//    stringLength = sizeof(name)/sizeof(char);
+//    std::cout<<stringLength;
+//    for(int i = stringLength-1; i>=0; i--){
+//       std::cout<<name[i];
+//    }
+//    return 0;
+// }
+
+//============================================
+// int main(){
+//    string names [3];
+//    for (int i = 0; i < 3; i++)
+//    {
+//       std::cout<<"what is the name of the student" <<i+1;
+//       std::cin>>names[i];
+//    }
+
+//    for (int i = 0; i < 3; i++)
+//    {
+//       std::cout<<"the name of the student "<<i+1<<"is: "<<names[i] <<endl;
+//    }
+   
+//    return 0;
+// }
+//=============================================
+// int main(){
+// int age = 11;
+// try{
+//    if(age<18)                                                  //ctrl + f9 ---->comile and alt + f9 ------>run
+//    throw age;
+//    else{std::cout<<"you are eligible to drink";}               // we can have multiple catch blocks for one try block
+// }
+// catch(int age){
+//    std::cout<<"Go drink milk";
+// }
+//    return 0;
+// }
+//===========================
+// int main(){
+//    int a=10;
+//    int b=0;
+//    try{
+//       if(b==0)
+//       throw b;
+//       else{std::cout<< a/b;}
+//    }
+//    catch(int b){
+//       std::cout<<"the number can not be divided by 0";
+//    }
+//    return 0;
+// }
+//=========================================
+// int main(){
+//    int number =0;
+//    while(number<5){
+//       std::cout<<number;
+//       number++;
+// }
+//    return 0;
+// }
+//---------------------------------------------------
+// class college{
+//    std::string name[5];
+//    int score[5];
+//    public:
+//    void getData(){
+//       for(int i=0; i<3; i++){
+//       std::cout<<"Enter data of studemt "<<i+1 <<std::endl;
+//       std::cout<<"student's name: ";
+//       cin.get();
+//       getline(cin, name[i]);
+//       std::cout<<"student's score: ";
+//       std::cin>>score[i];
+//       }
+//    }
+//    void showData(){
+//       std::cout<<"=============================\n";
+//       for(int i=0; i<3; i++){
+//       std::cout<<"data of student: "<<i+1<<std::endl;
+//       std::cout<<"name: "<<name[i]<<std::endl;
+//       std::cout<<"roll: "<<score[i]<<std::endl;
+//       }
+//    }
+// };
+
+// int main(){
+//    college object;
+//    object.getData();
+//    object.showData();
+//    return 0;
+// }
+//=============================
+// class family{
+// int a,b;
+// public:
+// void get(int a, int b){
+// this->a=a, this->b=b;
+// std::cout<<(a+b)<<std::endl;
+// std::cout<<this<<std::endl;
+// this->set();
+// }
+// void set();
+// };
+
+// void family:: set(){
+//    std::cout<<"hello brother!";
+// }
+// int main(){
+//    family *p,object;
+//    std::cout<<& object<<std::endl;
+//    p=& object;
+//    p-> get(10,20);
+//    return 0;
+// }
+//==================================
+// class InterestCalculation{
+// int a,b,c;
+// int n=10;
+// public:
+// int calculate(int a, int b, int c){
+//   // this->a=a, this ->b=b, this->c=c;
+//    int area;
+//  area = (a*b*c);
+//  std:cout<<this;                 //this is a local object pointer in every non-static member functions (automatically created) that holds the address of the object
+//  std::cout<<this->n;
+//  //std::cout<<this->calculate(1,2,3);
+//  return area;
+ 
+
+// }
+
+// };
+// int main(){
+//    InterestCalculation *p ,object;
+//    p = & object;
+
+//    std::cout<<& object<<std::endl;;
+//    std::cout<<p-> calculate(1,2,3);
+
+
+//    return 0;
+// }
+//===============================
+// int main(){
+//    std::string name1 = "chitiz";
+//    std::string name2 = "reyhan";
+// std::string result = (name1==name2) ? "true" : "false";
+// std::cout<<result<<endl;
+// std::string sentenceMaker = "the result is ";
+// sentenceMaker += result; 
+// std::cout<<sentenceMaker;
+//    return 0;
+//}
+//====================================================================================================
+
+// string name (string name1, string name2){
+//    string result = name1==name2 ? "the two strings match" : "the two strings do not match";
+//    return result;
+// }
+
+// int main(){
+//    std::cout<<name("chitiz", "chitiz");
+//    return 0;
+// }
+
+//=====================================
+
