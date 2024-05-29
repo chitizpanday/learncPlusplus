@@ -21,6 +21,18 @@
 //    return 0;
 // }
 //# define pi = 3.14;
+
+int areaOfTriangle(int l, int b, int h){
+int a;
+a = (l*b*h);
+return a;
+}
+
+int main(){
+   std::cout<<"the area of the triangle is: "<<areaOfTriangle(2,3,4);
+   
+   return 0;
+}
 //==================================================================
 // #include <iostream>
 // int glo=9;
