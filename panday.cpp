@@ -9,9 +9,8 @@
 // std::cout<<squareArea(3);
 //    return 0;
 // }
-
 //==============
-// int circleArea(int r){
+// float circleArea(int r){
 //    float pi = 3.14;
 //    return  (pi*r*r);
 
@@ -22,22 +21,11 @@
 // }
 //# define pi = 3.14;
 
-int areaOfTriangle(int l, int b, int h){
-int a;
-a = (l*b*h);
-return a;
-}
-
-int main(){
-   std::cout<<"the area of the triangle is: "<<areaOfTriangle(2,3,4);
-   
-   return 0;
-}
 //==================================================================
 // #include <iostream>
 // int glo=9;
 
-// void sum (){
+// void sum (){                         //When used as a function return type, the void keyword specifies that the function doesn't return a value
 // int a=2, b=3;
 // std::string name = "chitiz";
 // std::cout<<name;
@@ -45,7 +33,7 @@ int main(){
 // }
 
 // int main (){
-// int glo=5;
+// //int glo=5;
 // bool yes=true;
 // std::cout<< glo  <<  yes;
 // sum();
@@ -91,7 +79,6 @@ int main(){
 //    }
 //    return 0;
 // }
-
 //========================
 // int demo(){
 //    int i;
@@ -134,6 +121,17 @@ int main(){
 //    cout<< b <<endl;
 //    cout<<*b<<endl;
 //    cout<<&b;
+//    return 0;
+// }
+
+// int main(){
+//    int a=5;
+//    //int b;
+//    int *b =&a;
+//    std::cout<<&a<<std::endl;
+//    std::cout<<&b<<std::endl;
+//    std::cout<<b<<std::endl;
+//    std::cout<<*b;
 //    return 0;
 // }
 //===========================================ARRAYS AND POINTERS===============
@@ -257,7 +255,7 @@ int main(){
 //    std::cout<<sum(7,6);
 // }
 //========================================================
-//  # include <iostream>
+//# include <iostream>
 // using namespace std; 
 //# include <string.h>
 // int main (){
@@ -271,15 +269,16 @@ int main(){
 //    return 0;
 // }
 //===============================
+// # include <string.h>
 // int main(){
 //    char characters [] = "aeiou";
-//    //std::cout<<strlen(characters);
+//    std::cout<<strlen(characters);
 //    for(int i=0; i<= strlen(characters); i++){
 //       std::cout<<characters[i];
 //    }
 //    return 0;
 // }
-//========================
+//=====================
 // #include<string.h>
 // int main(){
 //    char characters [] = "aeiou";
@@ -287,7 +286,7 @@ int main(){
 //    std::string team[]= {"cowboy", "seahawks", "eagles",};
 //       std::cout<< name.length() <<'\n';
 //       std::cout<< strlen(characters)<<std::endl; // to use strlen(), header #include<string.h> is needed. strlen() is used with the char array.
-//       std::cout<<sizeof(team)/sizeof(std::string);
+//       std::cout<<sizeof(team);
 //       return 0;
 // }
 //==================
@@ -296,12 +295,27 @@ int main(){
 // int count = 0;
 // for(int i = 0; name[i] != '\0'; i++){  // In a C-style string, '\0' denotes the null terminator; it's used to mark the end of the string. 
 // count++;                               // So any functions that process/display strings will stop as soon as they hit it
+// }                                      // The null terminator is placed at the end of the array to indicate where the string ends.
+// return count;                          // char myString[] = "Hello";
+// }                                      // This array actually looks like this in memory:
+//                                        // ['H', 'e', 'l', 'l', 'o', '\0']
+// int main(){
+// std::cout<<charLen();
+//    return 0;
 // }
-// return count;
+// #include<string.h>
+// void demo(){
+//    int count =0;
+//    char name1 [] = "kaalu";
+//    std::string name2 = "mayalu";
+//    for(int i = 0; strlen(name1); i++){  // or name2[i]!= '\0';
+//       count++;
+//    }
+//    std::cout<<count;
 // }
 
 // int main(){
-// std::cout<<charLen();
+//    demo();
 //    return 0;
 // }
 //==================================================FILE HANDELING============
@@ -345,8 +359,8 @@ using namespace std;
 //    return 0;
 // }
 //================================================EXCEPTION HANDELING=====================================
-// # include <iostream>
-// using namespace std; 
+# include <iostream>
+using namespace std; 
 
 // int main (){
 //    int a,b,c;
@@ -367,7 +381,75 @@ using namespace std;
 //    cout<<"execution successful";
 //    return 0;
 // }
-//===============
+//=============================================
+// void drinkingAge(){
+//    int age;
+//    std::cout<<"please enter your age"<<std::endl;
+//    std::cin>>age;
+//    try{
+//       if(age<18){
+//          throw age;
+//       }
+//       else if(age>85){
+//          std::cout<<"u r too old, go home and sleep!";
+//       }
+//       else{
+//          std::cout<<"welcome to queen's bar, Enjoy!!";
+//       }
+//    }
+//    catch(int age){
+//       std::cout<<"You are a minor please do not enter "<<"you are only " <<age;
+//    }
+// }
+// int main (){
+//    drinkingAge();
+//    return 0;
+// }
+//===================
+// void barEntry(){
+// try {
+//   int age;
+//   std::cout<<"Please enter your age: ";
+//   std::cin>>age;
+//   if (age >= 18) {
+//     cout << "Access granted - you are old enough.";
+//   } else {
+//     throw 505;
+//   }
+// }
+// catch (int myNum) {
+//   cout << "Access denied - You must be at least 18 years old.\n";
+//   cout << "Error number: " << myNum;
+// }
+// }
+
+// int main(){
+//    barEntry();
+//    return 0;
+// }
+//============================
+                                                    //If you do not know the throw type used in the try block, you can use the "three dots" syntax (...) inside the catch block, which will handle any type of exception:
+// void barEntry(){
+// try {
+//   int age;
+//   std::cout<<"Please enter your age: ";
+//   std::cin>>age;
+//   if (age >= 18) {
+//     cout << "Access granted - you are old enough.";
+//   } else {
+//     throw 505;
+//   }
+// }
+// catch (...) {
+//   cout << "Access denied - You must be at least 18 years old.\n";
+// }
+// }
+
+// int main(){
+//    barEntry();
+//    return 0;
+// }
+//================================
 // int main(){
 //    int a=3;
 
@@ -442,6 +524,41 @@ using namespace std;
 //       std::cout<<"======================";
 //       std::cout<<"data of student"<<i+1<<std::endl;
 //       object[i].showdata();
+//    }
+//    return 0;
+// }
+//============================================
+// class idahoState{
+//    int age, studentId;
+//    std::string name;
+//    public: void writeData();
+//    public: void showData();
+// };
+
+// void idahoState:: writeData(){
+// std::cout<<"students ID: ";
+// std::cin>> studentId;
+// std::cout<<"students age: ";
+// std::cin>> age;
+// std::cout<<"students name: ";
+// std::cin>> name;
+// }
+
+// void idahoState::showData(){
+//    std::cout<<"students age: "<<age<<std::endl;
+//    std::cout<<"students name: "<<name<<std::endl;
+//    std::cout<<"students ID: "<<studentId<<std::endl;
+// }
+
+// int main(){
+//    idahoState data[2];
+//    for(int i=0; i<2; i++){
+//       std::cout<<"Please enter the data for student: "<<i+1<<std::endl;
+//       data[i].writeData();
+//    }
+//    for(int i=0; i<2; i++){
+//       std::cout<<"showing data for student: "<<i+1<<std::endl;
+//       data[i].showData();
 //    }
 //    return 0;
 // }
@@ -531,8 +648,9 @@ using namespace std;
 // int main()
 // {
 //    int x = 10;
-//    cout<<x;
+//    cout<<x<<endl;
 //    cout<<::x; 
+
 //    return 0;
 // }
 
@@ -548,24 +666,22 @@ using namespace std;
 
 //=========================================================
 // # include <iostream>
-// using namespace std; 
 
 // int main (){
-//     string a []= {"chitiz ", "panday ", "gyani ","cha"};
-//     for (int i = 0; i < 4; i++)
+//     std::string a []= {"chitiz ", "panday ", "gyani ","cha"};
+//     for (int i = 0; i < sizeof(a)/sizeof(std::string); i++)
 //     {
-//       cout<<a[i];
+//       std::cout<<a[i];
 //     }
-   
-   
 //    return 0;
 // }
 //================
 // int main(){
 //    int sum = 0;
-//    int numbers[5]={1,2,3,4,5};
-//    for(int i =0; i<5; i++){
-//       sum=sum+numbers[i];
+//    int numbers[]={1,2,3,4,5};
+//    for(int i =0; i<sizeof(numbers)/sizeof(int); i++){
+//       //sum=sum+numbers[i];
+//       sum+= numbers[i];
 //       //std::cout<<sum;
 //    }
 //    std::cout<<sum;
@@ -1516,8 +1632,8 @@ using namespace std;
 //    return 0;
 // }
 //===============================this====================
-//in c++, the keyword "this" holds the address of an object, this is also used to access the member variable of a class when the member variable and the local variable of a function have 
-//the same name.
+//in c++, the keyword "this" holds the address of an object, this is also used to access the member variable of a class when the member 
+//variable and the local variable of a function have the same name.
 
 // class funrun{
 //    int a=10;
@@ -1717,6 +1833,30 @@ using namespace std;
 //    object.showData();
 //    return 0;
 // }
+//===========================
+// class calculation{
+//    std::string name;
+//    int a, b, c;                                         //here a,b,c, addition(), and showResult() are instance variable/data variable and member functions
+//    public:                                                  // that can be accessed through object
+//    void addition(std::string name, int a, int b, int c){    // but std::string name, int a, int b, int c are local variables
+//    this->name=name;
+//    this->a=a;
+//    this->b=b;
+//    this->c=c;
+//    int z = (a+b+c);
+//    std::cout<<name<<z;
+// }
+//    public:
+//    void showResult(){
+//       this->addition("Result: ",1,2,3);
+//    }
+// };
+
+// int main(){
+//    calculation object;
+//    object.showResult();
+//    return 0;
+// }
 //=============================
 // class family{
 // int a,b;
@@ -1749,12 +1889,10 @@ using namespace std;
 //   // this->a=a, this ->b=b, this->c=c;
 //    int area;
 //  area = (a*b*c);
-//  std:cout<<this;                 //this is a local object pointer in every non-static member functions (automatically created) that holds the address of the object
-//  std::cout<<this->n;
-//  //std::cout<<this->calculate(1,2,3);
-//  return area;
- 
-
+//  std:cout<<this;                 //this is a local object pointer in every non-static member functions (automatically created) that holds the address of the object. This pointer is not created for static or friend functions.
+//  std::cout<<this->n;             // static member function does not have to be called through object so, no memory allocated, they are accesses through class itself
+//  //std::cout<<this->calculate(1,2,3); // static functions are primarily used for memory efficiency, their use make program/applications faster
+//  return area;                         //while non-static member function have to be called through object so, memory allocated, they are only accesses through object
 // }
 
 // };
@@ -1773,12 +1911,42 @@ using namespace std;
 //    std::string name1 = "chitiz";
 //    std::string name2 = "reyhan";
 // std::string result = (name1==name2) ? "true" : "false";
-// std::cout<<result<<endl;
+// //std::cout<<result<<endl;
 // std::string sentenceMaker = "the result is ";
 // sentenceMaker += result; 
 // std::cout<<sentenceMaker;
 //    return 0;
-//}
+// }
+//===================================================In C++, a char array is a multiple character values stored in contiguous memory locations. 
+//It is a fundamental way to represent strings in C++, although the std::string class is often preferred for its ease of use and dynamic memory management.
+// char status[10] = "Married";
+// char status[10]; // allocate 10 Bytes on stack
+// status[0] = 'M';
+// status[1] = 'a';
+// ...
+// status[6]= 'd';
+// status[7] = '\0'; // same as 0
+//======================================
+// # include<string.h>
+// void trial(){
+//    std:: string myString1 = "sheetal";
+//    char character [] = "chitizpanday";
+//    std:: string myString [] = {"sheetal", "chitiz", "reyhan"};
+//   std::cout<<myString1.length()<<std::endl;
+//   std::cout<<strlen(character)<<std::endl;
+//   std::cout<< sizeof(myString)/sizeof(std::string);
+// std::cout<<addressof(myString[0])<<std::endl;
+// std::cout<<addressof(myString[1])<<std::endl;
+// std::cout<<addressof(myString[2])<<std::endl;
+// std::cout<<addressof(myString1)<<std::endl;
+// std::cout<<addressof(character)<<std::endl;
+// std::cout<<character[3];
+// }
+
+// int main(){
+//    trial();
+//    return 0;
+// }
 //====================================================================================================
 
 // string name (string name1, string name2){
@@ -1792,4 +1960,122 @@ using namespace std;
 // }
 
 //=====================================
+
+// int main(){
+//    int a;
+//    std::cin>>a;
+//  std::string result = a%2 == 0 ? "the number is even": "the number is odd";
+//  std::cout<<result;
+//    return 0;
+// }
+//===========================creating Fibonacci numbers 1,2,3,5,8...=============
+// int main(){
+//    int n1 = 0, n2 = 1, n3;
+//    for(int i = 0; i<5; i++){
+//      n3=(n1+n2);
+//      std::cout<< n3;
+//      n1=n2;
+//      n2=n3;
+//    }
+//    return 0;
+// }
+//======================sorting out even and odd numbers=================
+// int main(){
+// int numbers[] = {1,2,3,4,5,6,7,8};
+//    int even=0;
+//    int odd=0;
+//    int length = sizeof(numbers)/sizeof(int);
+//      for(int i = 0; i<length; i++){
+//       if(numbers[i]%2==0){
+//          even++;
+//       }
+//       else{
+//          odd++;
+//       }
+//      }
+//      std::cout<<"even numbers: "<<even<<std::endl;
+//      std::cout<<"odd numbers: "<<odd;
+//    return 0;
+// }
+//========================finding factorial=================
+// int factorial(int inputNumber){
+//    int f = inputNumber;
+// for(int i =1; i<inputNumber; i++){
+//       f = (i*f);
+// }
+// return f;
+// }
+// int main(){
+//    std::cout<<factorial(3);
+//    return 0;
+// }
+//=====================check if the number is prime or not============
+// int primeOrNot(int inputNumber){
+//    for(int i=2; i<inputNumber; i++){
+//       if(inputNumber%i == 0){
+//          std::cout<<inputNumber<<"is not a prime number";
+//          break;
+//       }
+//       else{std::cout<<inputNumber<<" is a prime number";
+//       break;
+//       }
+//    }
+// }
+
+// int main(){
+//    primeOrNot(7);
+//    return 0;
+// }
+//======================Nested for loop==========
+// int main(){
+//    for(int i=1; i<=5; i++){
+//       std::cout<<'a';
+//        for(int j=1; j<=i; j++){
+//          std::cout<<'b';
+//        }
+//        std::cout<<endl;
+//    }
+//    return 0;
+// }
+//===============PRINT ALL THE PRIME NUMBERS=========
+// int main(){
+//    int number;
+//    int j;
+//    int i;
+//    std::cout<<"Please enter the number you want prime numbers upto: "<<std::endl;
+//    std::cin>>number;
+//    for(i=2; i<=number; i++){
+
+//       for(j=2; j<=i; j++){
+//          if(i%j==0){//std::cout<<"";
+//          break;
+//          }
+//       }
+//       if(j==i)
+//          std::cout<<j<<" ";
+//    }
+// return 0;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
